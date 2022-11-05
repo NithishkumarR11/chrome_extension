@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
   document.addEventListener("click", function (e) {
     console.log("Clicked");
-//    alert("Clicked");
+    alert("Clicked");
   },{once : true});
 });
 
