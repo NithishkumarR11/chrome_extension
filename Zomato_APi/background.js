@@ -1,9 +1,17 @@
 window.addEventListener('load', function() {
   document.addEventListener("click", function (e) {
     console.log("Clicked");
-    alert("Clicked");
+    fetch('https://www.zomato.com/partners/onlineordering')
+    .then(res => console.log(res))
+    .then(response => console.log(response))
+//    .catch(error => console.log('ERROR'))
   },{once : true});
 });
+/*
+chrome.webRequest.onBeforeRequest.addListener(function(data){
+    // data contains request_body
+},{'urls':[]},['requestBody']);
+*/
 
 
 /*
