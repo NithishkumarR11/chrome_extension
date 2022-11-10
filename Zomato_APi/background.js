@@ -2,20 +2,20 @@ window.addEventListener('load', function() {
   document.addEventListener("click", function (e) {
     console.log("Clicked");
     fetch('https://www.zomato.com/partners/*')
-    .then(response => {
+    /*.then(response => {
       var res = response.text();
       return res;
     })
     .then(data => {
       console.log(data);
       this.setState({ data });
-    });
+    });*/
         /*.then(response => console.log(response))
         let clone = response.clone();
          console.log("the reposnse", clone)*/
-//    .then(res => console.log(res))
-//    .then(response => console.log(response))
-//    .catch(error => console.log('ERROR'))
+    .then(res => console.log(res))
+    .then(response => console.log(response))
+    .catch(error => console.log('ERROR'))
   },{once : true});
 });
 /*chrome.devtools.network.onRequestFinished.addListener(request => {
