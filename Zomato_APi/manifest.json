@@ -1,20 +1,30 @@
 {
-    "manifest_version": 3,
-
-    "name": "Zomato Api",
-    "description": "Zomato Api",
-    "version": "1.0",
-    "permissions": ["scripting"],
-    "host_permissions": ["<all_urls>"],
-    "action": {
-        "default_title": "Zomato Api",
-        "default_popup": "popup.html"
-    },
-       "content_scripts": [
+  "manifest_version": 3,
+  "name": "Zomato Api",
+  "description": "Zomato Api",
+  "version": "1.0",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "action": {
+    "default_title": "Zomato Api",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
     {
-    "matches": ["https://www.zomato.com/", "https://www.zomato.com/*", "https://www.zomato.com/partners/onlineordering/orders/"],
-    "js": ["background.js"],
-    "run_at": "document_idle"
+      "matches": [
+        "https://www.zomato.com/*",
+        "https://partner.swiggy.com/*"
+      ],
+      "js": [
+        "jquery.js",
+        "background.js"
+      ]
     }
-]
+  ]
 }
