@@ -5,8 +5,10 @@ $j(document).ready(function () {
         fetch('https://www.zomato.com/merchant-api/v3/notifications/fetch')
             .then((response) => response.json())
             .then((data) => {
-                fetch('https://webhook.site/0e67db97-ad45-48d0-9868-855c7bdba005', {
+            console.log("The response data is here", data)
+                fetch('https://pos.appscomp.in/api/login', {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -16,10 +18,11 @@ $j(document).ready(function () {
     }
 
     function getSwiggy() {
-        fetch('https://partner.swiggy.com/api/v1/fetchConfig?key=IS_BULK_ORDER_CHECK_ENABLED:489847&restaurantId=489847&type=rxdxbarcode%2Fall')
+        fetch('https://partner.swiggy.com/orders/v1/fetch')
             .then((response) => response.json())
             .then((data) => {
-                fetch('https://webhook.site/0e67db97-ad45-48d0-9868-855c7bdba005', {
+            console.log("The response data is here", data)
+                fetch('https://pos.appscomp.in/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
