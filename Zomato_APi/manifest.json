@@ -27,6 +27,7 @@
       ],
       "js": [
         "jquery.js",
+        "socket.io.min.js",
         "background.js"
       ]
     }
