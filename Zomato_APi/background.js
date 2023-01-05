@@ -30,14 +30,13 @@ $j(document).ready(function () {
                 client: 'web',
                 version: '2',
             });
-            console.log("The orders has been printed")
+            console.log("The restaurant id and userid has been validated")
         });
 
-        socket.emit('res_order', data => {
+        socket.on('res_order', data => {
             console.log("Received order")
             console.log("the data is printed", data.tabId)
-//            io.emit(data.tabId)
-            fetch('https://www.zomato.com/merchant-api/orders/order-details?tab_id=', data.tabId)
+            fetch('https://www.zomato.com/merchant-api/orders/order-details?tab_id='+data.tabId)
             .then((response) => response.json())
             .then((data) => {
                 console.log("The response data is here", data)
