@@ -30,12 +30,11 @@ $j(document).ready(function () {
                 client: 'web',
                 version: '2',
             });
-            console.log("The restaurant id and userid has been validated")
+            console.log("The restaurant id and user id has been validated")
         });
 
         socket.on('res_order', data => {
-            console.log("Received order")
-            console.log("the data is printed", data.tabId)
+            console.log("the tab id is printed", data.tabId)
             fetch('https://www.zomato.com/merchant-api/orders/order-details?tab_id='+data.tabId)
             .then((response) => response.json())
             .then((data) => {
@@ -48,7 +47,7 @@ $j(document).ready(function () {
                     },
                     body: JSON.stringify(data),
                 })
-                console.log("these data's has been send to Odoo Server")
+                console.log("these data's has been send to Odoo Server", data)
             });
             console.log("End of the function")
         });
