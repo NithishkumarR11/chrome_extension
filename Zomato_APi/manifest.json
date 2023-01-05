@@ -16,8 +16,7 @@
     "https://*/*"
   ],
   "action": {
-    "default_title": "Zomato Api",
-    "default_popup": "popup.html"
+    "default_title": "Zomato Api"
   },
   "content_scripts": [
     {
