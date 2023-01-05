@@ -33,10 +33,10 @@ $j(document).ready(function () {
             console.log("The orders has been printed")
         });
 
-        socket.on('res_order', data => {
+        socket.emit('res_order', data => {
             console.log("Received order")
             console.log("the data is printed", data.tabId)
-            io.emit(data.tabId)
+//            io.emit(data.tabId)
             fetch('https://www.zomato.com/merchant-api/orders/order-details?tab_id=', data.tabId)
             .then((response) => response.json())
             .then((data) => {
